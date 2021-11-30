@@ -1,0 +1,29 @@
+import cv2
+import numpy as np
+
+img = cv2.imread('Fotos/2.jpg')
+# img = cv2.resize(img,(img.shape[1]//2,img.shape[0]//2))
+# img = cv2.GaussianBlur(img, (101,101), 0)
+# img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+# img = cv2.Canny(img, 150, 150)
+
+b =np.zeros((530,330, 3), np.uint8)
+b[100:150, 200:270] = 129,240,89
+print(11//2)
+cv2.rectangle(b, (10,10), (150,b.shape[1]//2),(129,240,89), thickness=cv2.FILLED)
+cv2.rectangle(b, (150,400), (250,b.shape[1]//2),(129,240,89), thickness=2)
+cv2.line(b,(100,0), (100,100), (255,0,0), thickness=2)
+cv2.circle(b, (50,50), 50, (0,255,255), thickness=2)
+cv2.putText(b, "Font", (50,50),cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,0), 3)
+
+
+while True:
+    a = input("Введите слово: ")
+    if a == "Квадрат":
+        c = input("размер высоты: ")
+        s = input("размер ширины: ")
+        b = np.zeros((int(c), int(s), 3), np.uint8)
+        cv2.imshow('Sand', b)
+        cv2.waitKey(3000)
+
+
