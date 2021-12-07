@@ -1,0 +1,27 @@
+def re(img, angle):
+    h, w = img.shape[:2]
+    cent = w // 2, h // 2
+
+    matrix = cv2.getRotationMatrix2D(cent, angle,1)
+    return cv2.warpAffine(img, matrix, (w, h))
+
+while True:
+    success, img = cap.read()
+    # img = cv2.flip(img, 1)   #отображение
+
+    cv2.rectangle(img, (100, 80), (300, 400), (255, 255,255), thickness=1)
+
+    img = cv2.resize(img, (800, 1000))
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    # img = cv2.GaussianBlur(img, (2, 2), 0)  # blur
+    img = cv2.Canny(img, 50, 170)
+
+    lines = np.ones((2,2),np.uint8)
+    img = cv2.dilate(img,lines,iterations=1)
+
+    img = re(img,90)
+
+    cv2.imshow("Result", img)
+
+    if cv2.waitKey(10) & 0xFF == ord('q'):
+        break
