@@ -5,3 +5,22 @@ while lines<=maxlines:
     # print the leading spaces, the left part and the right side of the tree
     print((maxlines-lines)*' '+ lines*'*'+(lines-1)*'*')
     lines+=1
+#второй вариант:
+height = 7
+z = height - 3
+x = 1
+for i in range(1, (height + height) - 3):
+    if i % 2 != 0:
+       if(i==1):
+          print('~~' * z + 'o' +'~~' * z)
+       else:
+          print('~~' * z + '* ' * (x-1)+ '*' *1 +'~~' * z)
+       x+=2
+       z-=1
+for a in range(height + 1):
+    if a % (height + 1) == 1:
+       test = height - 3
+       print(test * '~~' + a * '|' + test * '~~')
+    if a % (height + 1) == 1:
+       test = height - 3
+       print(test * '~~' + a * '|' + test * '~~')
