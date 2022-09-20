@@ -1,0 +1,21 @@
+import random
+secret = 0
+guess = 0
+tries = 6
+secret = random.randint(1,100)
+while guess!= secret and tries > 0:
+    guess=int(input("твой ответ"))
+    if guess < secret:
+        print("мало")
+        print("попыток осталось",tries-1)
+    if guess > secret:
+        print("много")
+        print("попыток осталось",tries-1)
+    tries = tries-1
+if guess == secret:
+    print("ты выиграл")
+    input("нажми enter")
+else:
+    print("ты проиграл , ответ",secret)
+    input("нажми enter")
+
