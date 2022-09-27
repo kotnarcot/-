@@ -1,0 +1,30 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+N = 10
+
+x1 = np.random.random(N)
+x2 = x1 + [np.random.randint(10)/10 for i in range(N)] #x1 x2 - это набор из 5 точек с рандомным значением
+C1 = [x1, x2] #двумерный массив (5 на 2)
+
+x1 = np.random.random(N)
+x2 = x1 - [np.random.randint(10)/10 for i in range(N)] - 0.1 #чтобы было ниже пороговой функции
+C2 = [x1, x2] #рандомные входные значения
+
+f = [0, 0] #линия гиперплоскости
+
+w = np.array([-0.3, 0.3]) #матрица весов
+
+for i in range(N): #проходится по точкам
+    x = np.array([C2[0][i], C2[1][i]]) #формирование значение нейронов
+    y = np.dot(w, x) #перемножает матрицу весов и матрицу значения нейронов = получается один выходной нейрон
+    if y >= 0:               #функция активации это и есть это условная конструкция
+        print("Класс C1")
+    else:
+        print("Класс C2")
+
+plt.scatter(C1[0][:], C1[1][:], s=10, c='red') #класс 1
+plt.scatter(C2[0][:], C2[1][:], s=10, c='blue') #класс 2
+plt.plot(f) #линия гиперплоскости
+plt.grid(True)
+plt.show()
