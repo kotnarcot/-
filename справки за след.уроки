@@ -1,0 +1,32 @@
+'''
+S = "ATTP"
+p = "ccccc"
+print(p.upper())      #делает из маленьких букв большие
+print(S.lower())       # из больших мальнькие
+print(p.count("ccc"))      #определяет сколько c есть в переменной p
+print(S.find("T"))    #  под каким числом стоит буква
+print(S.replace("AT","biy"))   # заменяет или подставляет буквы на другие в переменной
+
+
+
+S= "agTtsAGtc"
+print(S.upper().count("gt".upper())) #после превращения из мален.букв в большие там есть только 2 символа GT и поэтому в строке пишется 2
+
+dna = "ATTGL"
+print(dna[1:-1:3])
+
+
+n=input("ДОВОД")
+j=len(n)-1
+i=0
+is_palindrom = True
+while i<j:
+ if n[i]!= n[j]:
+  is_palindrom = False
+ i+= 1
+ j -= 1
+if is_palindrom:
+  print("YES")
+else:
+  print("NO")
+'''
