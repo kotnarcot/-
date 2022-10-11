@@ -30,3 +30,21 @@ if is_palindrom:
 else:
   print("NO")
 '''
+
+
+
+'''import random
+element = ['A', 'B', 'S', 'D']
+a = [random.choice(element) for i in range (5)]
+print(a)'''
+'''import random
+a = [random.randint(1, 100) for i in range (5)]
+print(a)'''
+
+
+import random
+a = [random.randint(1, 100) for i in range (2)]
+b = [random.randint(1, 100) for j in range (2)]
+m = [a]+[b]
+
+print(m)
