@@ -37,14 +37,54 @@ else:
 element = ['A', 'B', 'S', 'D']
 a = [random.choice(element) for i in range (5)]
 print(a)'''
+
+
+
 '''import random
 a = [random.randint(1, 100) for i in range (5)]
 print(a)'''
 
-
+'''
 import random
 a = [random.randint(1, 100) for i in range (2)]
 b = [random.randint(1, 100) for j in range (2)]
 m = [a]+[b]
 
-print(m)
+print(m)'''
+
+'''
+def min(x,y):
+    if x<=y:
+        return x
+    else:
+        return y 
+k =min(3,6)
+print(k)
+t= min(min(3,6),8)
+print(t)'''
+
+'''
+def f(*n):
+    m=n[0]
+    for x in n:
+        if m >x:
+            m=x
+            return m
+print(f(2,4,6,9,8))
+'''
+
+
+'''
+#
+# a=1
+# print(a,end="90")#конец
+'''
+
+'''
+def e(a):
+    a.append(9)
+
+a = []
+e(a)
+print(a)
+'''
