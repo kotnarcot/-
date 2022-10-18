@@ -88,3 +88,73 @@ a = []
 e(a)
 print(a)
 '''
+
+
+
+
+'''
+s = set()
+basket ={'кря','га','кря','курлык','кар','ко-ко'}
+for i in basket:
+    print(i)
+'''
+
+
+'''
+basket.add('кар')
+print(len(basket))
+print('кря' in basket)
+print('угууу' in basket)
+basket.discard('угу')
+basket.remove('угу')
+print(basket)
+'''
+
+
+'''
+    <ключ>: знач
+d = {9: 456,7:"767", 'tyty': 9*8, 2:2, }
+print(d[2])
+'''
+
+
+'''
+basket ={1:'кря',2:'га',3:'кря',4:'курлык',5:'кар',6:'ко-ко'}
+basket.pop (3)
+basket [7]='ро'
+print(basket[2])
+del basket[3]
+print(basket)
+'''
+
+
+'''
+for key in basket.keys():
+    print(key, end='')
+
+for keo in basket.values():
+    print(keo, end='')
+
+for kuu in basket.items():
+    print(kuu, end='')
+
+for key,keo in basket.items():
+    print(key,keo, end='')
+'''
+
+
+'''
+basket ={1:'кря',2:['га','кря','курлык'],3:'кар',4:['ко-ко']}
+print(basket[2][0])
+'''
+
+
+'''
+file = open('fth.txt','r')
+S1 = file.readline()
+print(S1)
+
+with open('fth.txt') as file:
+    S1 = file.readline()
+    print(S1)
+'''
