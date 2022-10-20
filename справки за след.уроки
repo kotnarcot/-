@@ -310,7 +310,8 @@ axes2.set_xlabel('x')
 axes2.set_ylabel('y') 
 axes2.set_title('insert title') 
  
-fig, axes = plt.subplots(nrows=1, ncols=2) # 
+fig, axes = plt.subplots(nrows=1, ncols=2) # возможность сделать два графика
+
  
 for ax in axes: 
     ax.plot(x, y, 'r') 
