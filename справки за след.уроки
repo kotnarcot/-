@@ -220,3 +220,138 @@ with open('fth.txt') as file:
     S1 = file.readline()
     print(S1)
 '''
+
+
+
+
+
+'''
+
+не изученная тема
+
+from numpy import * 
+ 
+a= array([2, 3, 4]) #Создание одномерного массива из списка целых чисел 
+print(a) 
+ 
+print(a.ndim) #размерность массива (одномерный, двумерный и тд) 
+print(a.shape) #размеры массива 
+ 
+b = array([(1.5, 2, 3), (4, 5, 6)]) #создание двумерного массива из двух последовательностей чисел 
+print(b) #все числа имеют один тип - число с плавающей точкой 
+print(b.ndim) 
+print(b.shape) 
+print(b.size) 
+ 
+z=zeros((3,2)) #3, 2 помещаются в дополнительные скобки, чтобы представлять из себя один объект 
+print(z) #создался 2мерный массив 
+ 
+print(arange(10, 30, 5)) #функция аналогична ф-ции range, но возвращает массив 
+ 
+print(linspace(0, 2, 9)) #генерирует 9 чисел на отрезке от 0 до 2 
+ 
+d = arange(12).reshape(4, 3)  #1 - количество строчек, 2-количество столбцов 
+print(d) #превратили одномерный массив в двумерный с решейп 
+ 
+#операции над массивами 
+ 
+x = array([10, 20, 30]) 
+y = arange(3) 
+print(x) 
+print(y) 
+ 
+print(x+y) #работает поэлементно 
+print(x-y) 
+ 
+#возведение в квадрат 
+print(x**2) 
+ 
+#массив как аргумент какой-то функции 
+print(2*sin(x)) 
+ 
+#операции сравнени 
+ 
+print(a<20)
+from  pylab import * 
+ 
+x = linspace(0, 5, 10)  #2 массива одинакового размера 
+y = x ** 2 
+print(x) 
+print(y) 
+ 
+#построим график для этих точек 
+ 
+figure() #функция 
+plot(x, y, 'r') #функция с параметрами x и y, + параметр цвета линии 
+xlabel('x') #название ветки 
+ylabel('y') #название ветки 
+title('title') #название окошка 
+show() #демонстрация 
+ 
+#точный график можно создать чуть-чуть по-другому 
+#создаём специальный объект - фигуру и на фигуру добавим оси и сам график 
+ 
+fig = plt.figure() 
+ 
+axes = fig.add_axes([0.1, 0.1, 0.8, 0.8]) #left, bottom, width, height (range 0 to 1) 
+axes2 = fig.add_axes([0.2, 0.5, 0.4, 0.3]) 
+ 
+#main figure 
+axes.plot(x, y, 'r') 
+ 
+axes.set_xlabel('x') 
+axes.set_ylabel('y') 
+axes.set_title('title') 
+ 
+#insert 
+axes2.plot(y, x, 'g') #перевернутый график 
+ 
+axes2.set_xlabel('x') 
+axes2.set_ylabel('y') 
+axes2.set_title('insert title') 
+ 
+fig, axes = plt.subplots(nrows=1, ncols=2) # 
+ 
+for ax in axes: 
+    ax.plot(x, y, 'r') 
+    ax.set_xlabel('x') 
+    ax.set_ylabel('y') 
+    ax.set_title('title') 
+fig.tight_layout() 
+ 
+#как настроить размер фигуры: 
+ 
+fig, axes = plt.subplots(figsize=(12, 3)) 
+ 
+axes.plot(x, y, 'r') 
+axes.set_xlabel('x') 
+axes.set_ylabel('y') 
+axes.set_title('title') 
+ 
+fig, ax = plt.subplots() 
+ 
+ax.plot(x, x**2, label="y=x**2") 
+ax.plot(x, x**3, label="y=x**3") 
+ax.legend(loc=2) #легенда размещается в левом верхнем углу 
+ax.set_xlabel('x') 
+ax.set_ylabel('y') 
+ax.set_title('title') 
+ 
+#построение гистограм 
+from numpy import * 
+ 
+n = random.randn(1000000) 
+fig, axes = plt.subplots(1, 2, figsize=(12, 4)) #построение 2 граф-в 
+ 
+#1 
+axes[0].hist(n) #вместо plot 
+axes[0].set_title("Gist") 
+axes[0].set_xlim(min(n), max(n)) #значения по осям 
+ 
+#2 
+axes[1].hist(n, cumulative=True, bins=50) #bins - количество вертикальных столбцов в графике 
+axes[1].set_title("Gist 2") 
+axes[1].set_xlim(min(n), max(n))
+
+
+'''
