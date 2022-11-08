@@ -356,6 +356,121 @@ axes[1].set_xlim(min(n), max(n))
 
 
 '''
+import  numpy as np
+import matplotlib.pyplot as plt
+
+x=np.array([0, 100, 84, 25])
+y = np.array([-17.8, 37.87, 28.89, -3.89])
+
+_,ax=plt.subplots()
+ax.plot(x, y, color="b", marker='.')
+ax.set_xlabel("F")
+ax.set_ylabel("C")
+plt.show()
+
+
+
+
+
+
+
+
+
+count = 601
+
+k = np.zeros(count)
+
+temp = -3
+i=0
+while temp <= 3:
+  k[i]=temp
+  i+=1
+  temp+=0.01
+
+h = np.zeros(4)
+J_i = np.zeros(4)
+
+J = np.zeros(count)
+
+for j in range(count):
+  for i in range(4):
+    h[i] = k[j] * X[i]
+    J_i[i] = (h[i] - Y[i])**2
+  J[j] =  J_i.sum() * (1/(2*count))
+
+
+_,ax = plt.subplots()
+ax.set_title("График зависимости ошибки от коэффициента k")
+ax.set_xlabel("Ошибка")
+ax.set_ylabel("k")
+ax.plot(k, J, color = "b")
+
+
+
+
+def computeCost(X, y, theta): # функция стоимости
+  m = len(y)
+  J = 0
+  h = X * theta[1] + theta[0]
+  squaredErrors = (h - y) ** 2
+  J = (1 /  m) * squaredErrors.sum()
+  return J
+  
+  
+  
+  
+  
+def gradientDescent(X, y, theta, alpha, num_iters): #градиентный спуск (парный градиентный спуск)
+  m = len(y)
+  J_history = np.zeros((num_iters, 1))
+  min_theta = np.zeros((2, 1))
+  minJ=1000000000000000
+
+  for iter in range(num_iters): #Обучение
+    h = X * theta[1] + theta[0]
+
+    theta[0] -= alpha * (1 / m) * ((h - y)).sum()
+    theta[1] -= alpha * (1 / m) * ((h - y)* X).sum()
+
+
+    cost = computeCost(X, y, theta)
+    J_history[iter] = cost
+    print(f"{iter} epochs: {cost}")
+
+    if cost<minJ: #Запись тета
+      minJ=cost
+      min_theta = theta
+
+
+  _,ax = plt.subplots()#Вывод истории ошибок
+  ax.set_title("График ошибки")
+  ax.set_xlabel("Шаг")
+  ax.set_ylabel("J")
+  ax.plot(np.arange(len(J_history)), J_history, color = "b")
+  return min_theta
+  
+  
+  
+  
+  
+iterations = 10000000 #Кол-во эпох обучения
+alpha = 0.0001 #Коэффициент обучения
+theta = np.random.random(2) #Изначальные веса
+
+theta = gradientDescent(X, Y, theta, alpha, iterations)# обучение
+print(theta)
+
+
+
+
+
+_,ax = plt.subplots()#Вывод истории ошибок
+  ax.set_title("График ошибки")
+  ax.set_xlabel("Шаг")
+  ax.set_ylabel("J")
+  ax.plot(np.arange(len(J_history)), J_history, color = "b")
+  return min_theta
+
 
 
 '''
