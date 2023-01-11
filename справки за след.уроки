@@ -29,20 +29,34 @@ if is_palindrom:
   print("YES")
 else:
   print("NO")
+
+
 '''
 
 
 
-'''import random
+
+
+
+'''
+import random
 element = ['A', 'B', 'S', 'D']
 a = [random.choice(element) for i in range (5)]
-print(a)'''
+print(a)
+
+'''
 
 
 
-'''import random
+
+'''
+import random
 a = [random.randint(1, 100) for i in range (5)]
-print(a)'''
+print(a)
+
+'''
+
+
 
 '''
 import random
@@ -50,7 +64,12 @@ a = [random.randint(1, 100) for i in range (2)]
 b = [random.randint(1, 100) for j in range (2)]
 m = [a]+[b]
 
-print(m)'''
+print(m)
+'''
+
+
+
+
 
 '''
 def min(x,y):
@@ -61,7 +80,12 @@ def min(x,y):
 k =min(3,6)
 print(k)
 t= min(min(3,6),8)
-print(t)'''
+print(t)
+
+'''
+
+
+
 
 '''
 def f(*n):
@@ -74,11 +98,17 @@ print(f(2,4,6,9,8))
 '''
 
 
+
+
+
 '''
 #
 # a=1
 # print(a,end="90")#конец
 '''
+
+
+
 
 '''
 def e(a):
@@ -92,12 +122,17 @@ print(a)
 
 
 
+
+
 '''
 s = set()
 basket ={'кря','га','кря','курлык','кар','ко-ко'}
 for i in basket:
     print(i)
 '''
+
+
+
 
 
 '''
@@ -111,11 +146,17 @@ print(basket)
 '''
 
 
+
+
+
 '''
     <ключ>: знач
 d = {9: 456,7:"767", 'tyty': 9*8, 2:2, }
 print(d[2])
 '''
+
+
+
 
 
 '''
@@ -126,6 +167,9 @@ print(basket[2])
 del basket[3]
 print(basket)
 '''
+
+
+
 
 
 '''
@@ -143,21 +187,31 @@ for key,keo in basket.items():
 '''
 
 
+
+
 '''
 basket ={1:'кря',2:['га','кря','курлык'],3:'кар',4:['ко-ко']}
 print(basket[2][0])
 '''
 
-from numpy import *
+
+
 '''
+from numpy import *
+
 a = array([2, 3, 4])  # Создание одномерного массива из списка целых чисел 
 print(a)
 '''
+
+
+
 
 '''
 print(a.ndim)  # размерность массива (одномерный, двумерный и тд) 
 print(a.shape)  # размеры массива 
 '''
+
+
 
 
 '''
@@ -169,24 +223,45 @@ print(b.size)
 '''
 
 
+
+
+
 '''
 z = zeros((3, 2))  # 3, 2 помещаются в дополнительные скобки, чтобы представлять из себя один объект 
 print(z)  # создался 2мерный массив 
 '''
 
 
+
+
+
+
 '''
 print(arange(10, 30, 5))  # функция аналогична ф-ции range, но возвращает массив 
 '''
+
+
+
+
+
 
 '''
 print(linspace(0, 2, 9))  # генерирует 9 чисел на отрезке от 0 до 2 
 '''
 
+
+
+
+
+
 '''
 d = arange(12).reshape(4, 3)  # 1 - количество строчек, 2-количество столбцов 
 print(d)  # превратили одномерный массив в двумерный с решейп 
 '''
+
+
+
+
 
 
 '''
@@ -220,6 +295,10 @@ with open('fth.txt') as file:
     S1 = file.readline()
     print(S1)
 '''
+
+
+
+
 
 
 
@@ -356,6 +435,11 @@ axes[1].set_xlim(min(n), max(n))
 
 
 '''
+
+
+
+
+'''
 import  numpy as np
 import matplotlib.pyplot as plt
 
@@ -470,13 +554,6 @@ _,ax = plt.subplots()#Вывод истории ошибок
   ax.set_ylabel("J")
   ax.plot(np.arange(len(J_history)), J_history, color = "b")
   return min_theta
-
-
-
-'''
-
-
-
 
 
 '''
